@@ -40,7 +40,13 @@
     }
   }
 
-  Bangle.on('charging', function(charging) { draw(); });
+  Bangle.on('charging', function(charging) {
+    if(charging) Bangle.buzz();
+    WIDGETS["widslimbat"].draw();
+  });
+  Bangle.on('lcdPower', function(on) {
+    WIDGETS["widslimbat"].draw();
+  });
   var id = setInterval(()=>WIDGETS["widslimbat"].draw(), intervalLow);
 
   WIDGETS["widslimbat"]={
