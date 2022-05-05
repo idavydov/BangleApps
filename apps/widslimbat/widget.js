@@ -27,10 +27,10 @@
       ocol = COLORS.charging;
     }
     g.reset();
-    g.setColor(ocol).drawImage(outline,this.x+2,this.y);
+    g.setColor(ocol).drawImage(outline,this.x+2,this.y+2);
     for (i = 0; i < ncells; i++) {
       var x = this.x + 2 + 2;
-      var y = this.y + 16 - i * 3;
+      var y = this.y + 16 + 2 - i * 3;
       g.setColor(ccol).drawRect(x, y, x + 4, y + 1);
     }
     if (Bangle.isCharging()) {
