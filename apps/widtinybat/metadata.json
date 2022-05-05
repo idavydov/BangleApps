@@ -1,0 +1,14 @@
+{ "id": "wid_tinybat",
+  "name": "Tiny battery widget",
+  "shortName":"Tiny battery",
+  "version":"0.01",
+  "description": "A tiny (13px wide) battery widget",
+  "icon": "widget.png",  
+  "type": "widget",
+  "tags": "widget",
+  "supports" : ["BANGLEJS2"],
+  "readme": "README.md",
+  "storage": [
+    {"name":"wid_tinybat.wid.js","url":"widget.js"}
+  ]
+}
