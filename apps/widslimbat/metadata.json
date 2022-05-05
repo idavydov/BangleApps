@@ -1,4 +1,4 @@
-{ "id": "wid_slimbat",
+{ "id": "widslimbat",
   "name": "Slim battery widget with cells",
   "shortName":"Slim battery with cells",
   "version":"0.01",
@@ -9,6 +9,6 @@
   "supports" : ["BANGLEJS2"],
   "readme": "README.md",
   "storage": [
-    {"name":"wid_slimbat.wid.js","url":"widget.js"}
+    {"name":"widslimbat.wid.js","url":"widget.js"}
   ]
 }

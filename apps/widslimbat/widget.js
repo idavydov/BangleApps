@@ -41,9 +41,9 @@
   }
 
   Bangle.on('charging', function(charging) { draw(); });
-  var id = setInterval(()=>WIDGETS["wid_slimbat"].draw(), intervalLow);
+  var id = setInterval(()=>WIDGETS["widslimbat"].draw(), intervalLow);
 
-  WIDGETS["wid_slimbat"]={
+  WIDGETS["widslimbat"]={
     area:"tr",
     width: 13,
     draw:draw
