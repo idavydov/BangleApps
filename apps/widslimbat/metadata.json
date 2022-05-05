@@ -1,0 +1,14 @@
+{ "id": "wid_slimbat",
+  "name": "Slim battery widget with cells",
+  "shortName":"Slim battery with cells",
+  "version":"0.01",
+  "description": "A small (13px wide) battery widget with cells",
+  "icon": "widget.png",  
+  "type": "widget",
+  "tags": "widget",
+  "supports" : ["BANGLEJS2"],
+  "readme": "README.md",
+  "storage": [
+    {"name":"wid_slimbat.wid.js","url":"widget.js"}
+  ]
+}
