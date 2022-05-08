@@ -3,11 +3,10 @@
   "shortName":"Slim battery with cells",
   "version":"0.01",
   "description": "A small (13px wide) battery widget with cells",
-  "icon": "widget.png",  
+  "icon": "widget.png",
   "type": "widget",
   "tags": "widget",
   "supports" : ["BANGLEJS2"],
-  "readme": "README.md",
   "storage": [
     {"name":"widslimbat.wid.js","url":"widget.js"}
   ]
