@@ -11,47 +11,45 @@
 
   function draw() {
     var i;
-    var ocol = COLORS.low;
-    var ccol = COLORS.low;
-    var ncells = 0;
+    var oCol = COLORS.low;
+    var cCol = COLORS.low;
+    var nCells = 0;
 
     const bat = E.getBattery();
-    if (bat > 5) {
-      ocol = COLORS.black;
-      ncells = 1 + Math.floor((bat-6)/19);
+    if (bat>5) {
+      oCol = COLORS.black;
+      nCells = 1 + Math.floor((bat-6)/19);
     }
-    if (ncells > 1) {
-      ccol = COLORS.black;
-    }
-    if (Bangle.isCharging()) {
-      ocol = COLORS.charging;
-    }
+    if (nCells>1)
+      cCol = COLORS.black;
+    if (Bangle.isCharging())
+      oCol = COLORS.charging;
     g.reset();
-    g.setColor(ocol).drawImage(outline,this.x+2,this.y+2);
-    for (i = 0; i < ncells; i++) {
-      var x = this.x + 2 + 2;
-      var y = this.y + 16 + 2 - i * 3;
-      g.setColor(ccol).drawRect(x, y, x + 4, y + 1);
+    g.setColor(oCol).drawImage(outline,this.x+2,this.y+2);
+    for (i=0;i<nCells;i++) {
+      var x = this.x+2+2;
+      var y = this.y+16+2-i*3;
+      g.setColor(cCol).drawRect(x,y,x+4,y+1);
     }
     if (Bangle.isCharging()) {
-      changeInterval(id, intervalHigh);
+      changeInterval(id,intervalHigh);
     } else {
-      changeInterval(id, intervalLow);
+      changeInterval(id,intervalLow);
     }
   }
 
-  Bangle.on('charging', function(charging) {
-    if(charging) Bangle.buzz();
+  Bangle.on("charging",function(charging) {
+    if (charging) Bangle.buzz();
     WIDGETS["widslimbat"].draw();
   });
-  Bangle.on('lcdPower', function(on) {
+  Bangle.on('lcdPower',function(on) {
     WIDGETS["widslimbat"].draw();
   });
-  var id = setInterval(()=>WIDGETS["widslimbat"].draw(), intervalLow);
+  var id = setInterval(()=>WIDGETS["widslimbat"].draw(),intervalLow);
 
   WIDGETS["widslimbat"]={
     area:"tr",
-    width: 13,
+    width:13,
     draw:draw
   };
 })();
