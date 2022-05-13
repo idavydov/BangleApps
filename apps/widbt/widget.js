@@ -10,7 +10,6 @@ WIDGETS["widbt"]={area:"tr",width:15,draw:function() {
 },changed:function(noDraw) {
   var settings = require('Storage').readJSON("widbt.json", true) || {};
 
-  console.log(settings);
   if (settings.hideDisconnected) {
     WIDGETS["widbt"].width = NRF.getSecurityStatus().connected?15:0;
     // width has changed
