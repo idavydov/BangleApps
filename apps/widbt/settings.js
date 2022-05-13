@@ -15,7 +15,7 @@
       onchange: v => {
         settings.hideDisconnected = v;
         writeSettings();
-        if (WIDGETS["widbt"]) WIDGETS["widbt"].reload();
+        if (WIDGETS["widbt"]) WIDGETS["widbt"].changed();
       }
     },
   });
