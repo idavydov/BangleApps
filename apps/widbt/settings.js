@@ -13,7 +13,7 @@
       value: !!settings.hideDisconnected,
       format: v => v?"Hide":"Show",
       onchange: v => {
-        settings.showDisconnected = v;
+        settings.hideDisconnected = v;
         writeSettings();
         if (WIDGETS["widbt"]) WIDGETS["widbt"].reload();
       }
