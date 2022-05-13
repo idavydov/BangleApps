@@ -15,10 +15,9 @@ WIDGETS["bluetooth"]={area:"tr",draw:function() {
   }
   return 15;
 },changed:function() {
-  const settings = require('Storage').readJSON("widbt.json", true) || {};
-
-  if (settings.hideDisconnected) {
-    WIDGETS.bluetooth.width = NRF.getSecurityStatus().connected?15:0;
+  const newWidth = WIDGETS.bluetooth.getWidth();
+  if (WIDGETS.bluetooth.width != newWidth) {
+    WIDGETS.bluetooth.width = newWidth;
     Bangle.drawWidgets();
   } else {
     WIDGETS.bluetooth.draw();
