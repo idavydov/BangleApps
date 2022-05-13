@@ -8,9 +8,11 @@ WIDGETS["bluetooth"]={area:"tr",draw:function() {
     g.setColor(g.theme.dark ? "#666" : "#999");
   g.drawImage(atob("CxQBBgDgFgJgR4jZMawfAcA4D4NYybEYIwTAsBwDAA=="),2+this.x,2+this.y);
 },getWidth:function(){
-  const settings = require('Storage').readJSON("widbt.json", true) || {};
-  if (settings.hideDisconnected&&!NRF.getSecurityStatus().connected)
-    return 0;
+  if (NRF.getSecurityStatus().connected) {
+    const settings = require('Storage').readJSON("widbt.json", true) || {};
+    if (settings.hideDisconnected)
+      return 0;
+  }
   return 15;
 },changed:function() {
   const settings = require('Storage').readJSON("widbt.json", true) || {};
