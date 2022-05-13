@@ -15,7 +15,7 @@
       onchange: v => {
         settings.hideDisconnected = v;
         writeSettings();
-        if (WIDGETS["widbt"]) WIDGETS["widbt"].changed();
+        if (WIDGETS["bluetooth"]) WIDGETS["bluetooth"].changed();
       }
     },
   });
