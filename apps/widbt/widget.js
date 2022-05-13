@@ -9,7 +9,7 @@ WIDGETS["bluetooth"]={area:"tr",draw:function() {
   g.drawImage(atob("CxQBBgDgFgJgR4jZMawfAcA4D4NYybEYIwTAsBwDAA=="),2+this.x,2+this.y);
 },getWidth:function(){
   const settings = require('Storage').readJSON("widbt.json", true) || {};
-  if (settings.hideDisconnected&&NRF.getSecurityStatus().connected)
+  if (settings.hideDisconnected&&!NRF.getSecurityStatus().connected)
     return 0;
   return 15;
 },changed:function() {
