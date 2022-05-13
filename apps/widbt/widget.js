@@ -8,7 +8,7 @@ WIDGETS["bluetooth"]={area:"tr",draw:function() {
     g.setColor(g.theme.dark ? "#666" : "#999");
   g.drawImage(atob("CxQBBgDgFgJgR4jZMawfAcA4D4NYybEYIwTAsBwDAA=="),2+this.x,2+this.y);
 },getWidth:function(){
-  if (NRF.getSecurityStatus().connected) {
+  if (!NRF.getSecurityStatus().connected) {
     const settings = require('Storage').readJSON("widbt.json", true) || {};
     if (settings.hideDisconnected)
       return 0;
