@@ -1,5 +1,5 @@
 WIDGETS["bluetooth"]={area:"tr",draw:function() {
-  if (WIDGETS["bluetooth"].width==0)
+  if (WIDGETS.bluetooth.width==0)
     return;
   g.reset();
   if (NRF.getSecurityStatus().connected)
@@ -16,14 +16,14 @@ WIDGETS["bluetooth"]={area:"tr",draw:function() {
   const settings = require('Storage').readJSON("widbt.json", true) || {};
 
   if (settings.hideDisconnected) {
-    WIDGETS["bluetooth"].width = NRF.getSecurityStatus().connected?15:0;
+    WIDGETS.bluetooth.width = NRF.getSecurityStatus().connected?15:0;
     Bangle.drawWidgets();
   } else {
-    WIDGETS["bluetooth"].draw();
+    WIDGETS.bluetooth.draw();
   }
 }};
 
 // set width to 0 if needed
-WIDGETS["bluetooth"].width = WIDGETS["bluetooth"].getWidth();
-NRF.on('connect',WIDGETS["bluetooth"].changed);
-NRF.on('disconnect',WIDGETS["bluetooth"].changed);
+WIDGETS.bluetooth.width = WIDGETS.bluetooth.getWidth();
+NRF.on('connect',WIDGETS.bluetooth.changed);
+NRF.on('disconnect',WIDGETS.bluetooth.changed);
