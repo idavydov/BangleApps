@@ -8,6 +8,7 @@
   "tags": "widget",
   "supports": ["BANGLEJS","BANGLEJS2"],
   "storage": [
+    {"name":"widtest.wid.js","url":"widget.js"},
     {"name":"widtest.settings.js","url":"settings.js"}
   ],
   "data": [{"name":"widtest.json"}]
