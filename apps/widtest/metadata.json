@@ -1,0 +1,15 @@
+{
+  "id": "widtest",
+  "name": "Test Widget",
+  "version": "0.01",
+  "description": "Testing",
+  "icon": "widget.png",
+  "type": "widget",
+  "tags": "widget",
+  "supports": ["BANGLEJS","BANGLEJS2"],
+  "storage": [
+    {"name":"widtest.wid.js","url":"widget.js"},
+    {"name":"widtest.settings.js","url":"settings.js"}
+  ],
+  "data": [{"name":"widtest.json"}]
+}
